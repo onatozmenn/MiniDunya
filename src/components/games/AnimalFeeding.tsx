@@ -1,0 +1,1 @@
+export { AlphabetPainting as AnimalFeeding } from './AlphabetPainting';

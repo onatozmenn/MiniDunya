@@ -1,0 +1,78 @@
+{
+  "name": "minidunya",
+  "version": "1.0.0",
+  "description": "🌟 Interactive educational app for kids (3-6 years) with music, games & stories",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "lighthouse": "lhci autorun",
+    "analyze": "vite-bundle-analyzer"
+  },
+  "keywords": [
+    "react",
+    "typescript", 
+    "kids-app",
+    "educational",
+    "interactive",
+    "music",
+    "games",
+    "stories",
+    "turkish",
+    "children",
+    "toca-boca-style",
+    "tailwind-css",
+    "pwa"
+  ],
+  "author": "Onat Özmen <hello@onat-ozmen.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/minidunya.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/minidunya/issues"
+  },
+  "homepage": "https://minidunya.vercel.app",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "motion": "^10.16.4",
+    "lucide-react": "^0.294.0",
+    "@supabase/supabase-js": "^2.38.4",
+    "sonner": "^1.2.4",
+    "react-hook-form": "^7.55.0",
+    "recharts": "^2.8.0",
+    "react-slick": "^0.29.0",
+    "react-responsive-masonry": "^2.1.7",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "re-resizable": "^6.9.11",
+    "hono": "^3.11.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "@vitejs/plugin-react": "^4.1.1",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0",
+    "tailwindcss": "^4.0.0-alpha.25",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "vite-bundle-analyzer": "^0.7.0",
+    "@lhci/cli": "^0.12.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}

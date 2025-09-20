@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;700&family=SF+Pro+Text:wght@400;600&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  /* Typography font sizes */
+  --text-2xl: 34px;
+  --text-xl: 28px;
+  --text-lg: 22px;
+  --text-base: 17px;
+  --text-sm: 15px;
+  --text-h4: 20px;
+  /* Children-friendly responsive text sizes */
+  --text-kids-huge: clamp(32px, 8vw, 48px);
+  --text-kids-big: clamp(24px, 6vw, 36px);
+  --text-kids-large: clamp(18px, 4.5vw, 26px);
+  --text-kids-medium: clamp(16px, 4vw, 20px);
+  --text-kids-small: clamp(14px, 3.5vw, 17px);
+  
+  /* Mobile spacing */
+  --mobile-padding: clamp(16px, 5vw, 32px);
+  --mobile-gap: clamp(16px, 4vw, 32px);
+  --mobile-button-height: clamp(100px, 18vw, 160px);
+  
+  /* Children-friendly button spacing */
+  --kids-button-padding: clamp(20px, 6vw, 40px);
+  --kids-button-gap: clamp(20px, 5vw, 40px);
+  --kids-button-height: clamp(120px, 20vw, 180px);
+  --kids-emoji-size: clamp(40px, 10vw, 64px);
+  /* Typography font families */
+  --font-display: 'SF Pro Display', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-text: 'SF Pro Text', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  /* The default background color for the application. */
+  --background: rgba(255, 255, 255, 1);
+  /* The default color for elements or text that appears on top of the background. */
+  --foreground: rgba(0, 0, 0, 1);
+  /* The background color for cards, modals, and other containers. */
+  --card: rgba(255, 255, 255, 1);
+  /* The default color for text or elements that appear on top of cards, modals and other background containers. */
+  --card-foreground: rgba(0, 0, 0, 1);
+  /* The background color for dropdowns and tooltips. */
+  --popover: rgba(237, 237, 237, 0.8);
+  /* The default color for text or elements that appear on top of dropdowns and tooltips. */
+  --popover-foreground: rgba(0, 0, 0, 1);
+  /* The primary color used for buttons, links, and other interactive elements. */
+  --primary: rgba(0, 122, 255, 1);
+  /* The default color for text or elements that appear on top of primary colored elements. */
+  --primary-foreground: rgba(255, 255, 255, 1);
+  /* The secondary color used for secondary(but NOT-DESTRUCTIVE) buttons and interactive elements. */
+  --secondary: rgba(242, 242, 247, 1);
+  /* The default color for text or elements that appear on top of secondary colored elements. */
+  --secondary-foreground: rgba(0, 0, 0, 1);
+  /* The muted color used for less prominent elements, such as disabled buttons or disabled text. */
+  --muted: rgba(118, 118, 128, 0.12);
+  /* The default color for text or elements that appear on top of muted colored elements. */
+  --muted-foreground: rgba(60, 60, 67, 0.6);
+  /* The accent color used for highlights, links, and other interactive elements. */
+  --accent: rgba(0, 122, 255, 1);
+  /* The default color for text or elements that appear on top of accent colored elements. */
+  --accent-foreground: rgba(255, 255, 255, 1);
+  /* The color used for background in destructive actions, such as delete buttons or error messages. */
+  --destructive: rgba(255, 59, 48, 1);
+  /* The default color for text or elements that appear on top of destructive colored elements. */
+  --destructive-foreground: rgba(255, 255, 255, 1);
+  /* The default border color for elements such as inputs, buttons, and other containers. */
+  --border: rgba(60, 60, 67, 0.36);
+  /* The default background color for input fields once the text has been filled. Should be either transparent or match the input-background. */
+  --input: rgba(255, 255, 255, 1);
+  /* The default background color for input fields, text areas, and other input elements. */
+  --input-background: rgba(255, 255, 255, 1);
+  /* The default font weight for bold text. */
+  --font-weight-bold: 700;
+  /* The default font weight for semibold text. */
+  --font-weight-semibold: 600;
+  /* The default font weight for normal text. */
+  --font-weight-normal: 400;
+  /* The color for focus rings, outlines, and other focus indicators. */
+  --ring: rgba(0, 122, 255, 1);
+  /* Shadow for small elevations, such as cards or modals. */
+  --elevation-sm: 0px 8px 64px 0px rgba(0, 0, 0, 0.1);
+  /* The color for chart elements, such as a bar or line in a chart. */
+  --chart-1: rgba(0, 122, 255, 1);
+  /* The color for another chart element, such as a bar or line in a chart. */
+  --chart-2: rgba(52, 199, 89, 1);
+  /* The color for another chart element, such as a bar or line in a chart. */
+  --chart-3: rgba(255, 149, 0, 1);
+  /* The color for another chart element, such as a bar or line in a chart. */
+  --chart-4: rgba(175, 82, 222, 1);
+  /* The color for another chart element, such as a bar or line in a chart. */
+  --chart-5: rgba(255, 45, 85, 1);
+  /* The default border radius for elements such as buttons, tooltip, and other containers. */
+  --radius: 14px;
+  /* The border radius for card containers. */
+  --radius-card: 16px;
+  /* The border radius for widget containers. */
+  --radius-widget: 22px;
+  /* The background color for sidebars, navigation menus, and other persistent elements. */
+  --sidebar: rgba(0, 0, 0, 0);
+  /* The default color for text or elements that appear on top of sidebars, navigation menus, and other persistent elements. */
+  --sidebar-foreground: rgba(0, 0, 0, 1);
+  /* The primary color used for buttons, links, and other interactive elements in sidebars and navigation menus. */
+  --sidebar-primary: rgba(0, 122, 255, 1);
+  /* The default color for text or elements that appear on top of primary colored elements in sidebars and navigation menus. */
+  --sidebar-primary-foreground: rgba(255, 255, 255, 1);
+  /* The accent color used for highlights, links, and other interactive elements in sidebars and navigation menus. */
+  --sidebar-accent: rgba(0, 122, 255, 1);
+  /* The default color for text or elements that appear on top of accent colored elements in sidebars and navigation menus. */
+  --sidebar-accent-foreground: rgba(255, 255, 255, 1);
+  /* The default border color for elements in sidebars and navigation menus. */
+  --sidebar-border: rgba(60, 60, 67, 0.36);
+  /* The default color for focus rings, outlines, and other focus indicators in sidebars and navigation menus. */
+  --sidebar-ring: rgba(0, 122, 255, 1);
+}
+
+.dark {
+  --background: rgba(28, 28, 30, 1);
+  --foreground: rgba(255, 255, 255, 1);
+  --card: rgba(44, 44, 46, 1);
+  --card-foreground: rgba(255, 255, 255, 1);
+  --popover: rgba(58, 58, 60, 0.8);
+  --popover-foreground: rgba(255, 255, 255, 1);
+  --primary: rgba(10, 132, 255, 1);
+  --primary-foreground: rgba(255, 255, 255, 1);
+  --secondary: rgba(58, 58, 60, 1);
+  --secondary-foreground: rgba(255, 255, 255, 1);
+  --muted: rgba(118, 118, 128, 0.24);
+  --muted-foreground: rgba(235, 235, 245, 0.6);
+  --accent: rgba(10, 132, 255, 1);
+  --accent-foreground: rgba(255, 255, 255, 1);
+  --destructive: rgba(255, 69, 58, 1);
+  --destructive-foreground: rgba(255, 255, 255, 1);
+  --border: rgba(84, 84, 88, 0.6);
+  --input: rgba(58, 58, 60, 1);
+  --input-background: rgba(58, 58, 60, 1);
+  --ring: rgba(10, 132, 255, 1);
+  --elevation-sm: 0px 8px 64px 0px rgba(0, 0, 0, 0.3);
+  --chart-1: rgba(10, 132, 255, 1);
+  --chart-2: rgba(48, 209, 88, 1);
+  --chart-3: rgba(255, 159, 10, 1);
+  --chart-4: rgba(191, 90, 242, 1);
+  --chart-5: rgba(255, 55, 95, 1);
+  --sidebar: rgba(28, 28, 30, 1);
+  --sidebar-foreground: rgba(255, 255, 255, 1);
+  --sidebar-primary: rgba(10, 132, 255, 1);
+  --sidebar-primary-foreground: rgba(255, 255, 255, 1);
+  --sidebar-accent: rgba(10, 132, 255, 1);
+  --sidebar-accent-foreground: rgba(255, 255, 255, 1);
+  --sidebar-border: rgba(84, 84, 88, 0.6);
+  --sidebar-ring: rgba(10, 132, 255, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: var(--radius-card);
+  --radius-2xl: var(--radius-widget);
+  --shadow-sm: var(--elevation-sm);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-text);
+    /* Performance optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Performance optimizations */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Hardware acceleration for smooth animations */
+  .hardware-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Optimize scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Performance optimizations for animations */
+  .animate-optimized {
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* GPU acceleration for common transforms */
+  .gpu-accelerated {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Contain layout thrashing */
+  .layout-contained {
+    contain: layout style;
+  }
+
+  /* Optimize repaints */
+  .paint-optimized {
+    contain: paint;
+  }
+
+  /* Critical path optimization */
+  .critical-render {
+    contain: strict;
+    content-visibility: auto;
+  }
+
+  /* Bubble Pop Magic - Enhanced Animations */
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes bubbleFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(-5px) rotate(-1deg); }
+  }
+
+  @keyframes bubbleShine {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes cloudDrift1 {
+    0%, 100% { transform: translateX(0px); }
+    50% { transform: translateX(20px); }
+  }
+
+  @keyframes cloudDrift2 {
+    0%, 100% { transform: translateX(0px); }
+    50% { transform: translateX(-15px); }
+  }
+
+  @keyframes cloudDrift3 {
+    0%, 100% { transform: translateX(0px); }
+    50% { transform: translateX(10px); }
+  }
+
+  @keyframes particleExplode {
+    0% { 
+      transform: scale(1) translateX(0) translateY(0);
+      opacity: 1;
+    }
+    100% { 
+      transform: scale(0.2) translateX(var(--particle-dx)) translateY(var(--particle-dy));
+      opacity: 0;
+    }
+  }
+
+  @keyframes bubblePop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(0); }
+  }
+
+  @keyframes scoreFloat {
+    0% { transform: translateY(0) scale(0.8); opacity: 0; }
+    20% { transform: translateY(-10px) scale(1.2); opacity: 1; }
+    100% { transform: translateY(-50px) scale(0.8); opacity: 0; }
+  }
+
+  .bubble-gradient-animation {
+    animation: gradient 3s ease infinite;
+  }
+
+  .bubble-float-animation {
+    animation: bubbleFloat 4s ease-in-out infinite;
+  }
+
+  .bubble-shine-animation {
+    animation: bubbleShine 2.5s ease-in-out infinite;
+  }
+
+  .cloud-drift-1 {
+    animation: cloudDrift1 12s ease-in-out infinite;
+  }
+
+  .cloud-drift-2 {
+    animation: cloudDrift2 15s ease-in-out infinite;
+  }
+
+  .cloud-drift-3 {
+    animation: cloudDrift3 10s ease-in-out infinite;
+  }
+
+  .particle-explode {
+    animation: particleExplode 0.6s ease-out forwards;
+  }
+
+  .bubble-pop {
+    animation: bubblePop 0.3s ease-out forwards;
+  }
+
+  .score-float {
+    animation: scoreFloat 2s ease-out forwards;
+  }
+
+  /* Story Voice Animations */
+  @keyframes voicePulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+
+  @keyframes characterSpeak {
+    0%, 100% { transform: translateY(0px); }
+    25% { transform: translateY(-3px); }
+    75% { transform: translateY(-1px); }
+  }
+
+  @keyframes textGlow {
+    0%, 100% { text-shadow: 0 0 5px rgba(147, 51, 234, 0.3); }
+    50% { text-shadow: 0 0 15px rgba(147, 51, 234, 0.6); }
+  }
+
+  .voice-pulse {
+    animation: voicePulse 1.5s ease-in-out infinite;
+  }
+
+  .character-speak {
+    animation: characterSpeak 0.8s ease-in-out infinite;
+  }
+
+  .text-glow {
+    animation: textGlow 2s ease-in-out infinite;
+  }
+
+  /* Animal Feeding Game - Animations */
+  @keyframes animalBounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.05); }
+  }
+
+  @keyframes animalShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+
+  @keyframes foodFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(2deg); }
+  }
+
+  @keyframes foodSparkle {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  @keyframes successGlow {
+    0% { box-shadow: 0 0 0 rgba(76, 175, 80, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(76, 175, 80, 0.8); }
+    100% { box-shadow: 0 0 0 rgba(76, 175, 80, 0.4); }
+  }
+
+  @keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+    20%, 40%, 60%, 80% { transform: translateX(3px); }
+  }
+
+  @keyframes dragScale {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+  }
+
+  .animal-bounce {
+    animation: animalBounce 0.6s ease-in-out;
+  }
+
+  .animal-shake {
+    animation: animalShake 0.5s ease-in-out;
+  }
+
+  .food-float {
+    animation: foodFloat 3s ease-in-out infinite;
+  }
+
+  .food-sparkle {
+    animation: foodSparkle 2s ease-in-out infinite;
+  }
+
+  .success-glow {
+    animation: successGlow 1s ease-in-out infinite;
+  }
+
+  .error-shake {
+    animation: errorShake 0.5s ease-in-out;
+  }
+
+  .drag-scale {
+    animation: dragScale 0.2s ease-out;
+  }
+
+  /* Hide Scrollbars */
+  .scrollbar-hide {
+    /* Firefox */
+    scrollbar-width: none;
+    /* Safari and Chrome */
+    -ms-overflow-style: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Accessibility - Reduce motion */
+  @media (prefers-reduced-motion: reduce) {
+    .bubble-float-animation,
+    .bubble-shine-animation,
+    .cloud-drift-1,
+    .cloud-drift-2,
+    .cloud-drift-3,
+    .particle-explode,
+    .animal-bounce,
+    .animal-shake,
+    .food-float,
+    .food-sparkle {
+      animation: none;
+    }
+  }
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5;
+}
+
+h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.5;
+}
+
+p {
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+}
+
+span {
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+}
+
+label {
+  font-family: var(--font-text);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+button {
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+}
+
+input {
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+}
+
+html {
+  font-size: var(--font-size);
+}
